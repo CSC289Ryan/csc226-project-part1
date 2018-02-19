@@ -52,7 +52,15 @@ namespace SportsPro {
         }
 
         protected void btnEmptyContacts_Click(object sender, EventArgs e) {
-            // stub event handler
+            RemoveAllContacts();
+        }
+
+        private void RemoveAllContacts() {
+            bool contactsExist = (contacts.Count > 0);
+            if (contactsExist) {
+                contacts.Clear();
+                lstContacts.Items.Clear(); // refresh display
+            }            
         }
     }
 }
