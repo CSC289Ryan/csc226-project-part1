@@ -13,5 +13,10 @@ namespace SportsPro.Models {
         public string PostalCode { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+
+        public string ContactDisplay() {
+            string contactInfo = $"{Name}: {PhoneNumber}; {Email}";
+            return contactInfo;
+        }
     }
 }
