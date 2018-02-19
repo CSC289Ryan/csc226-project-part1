@@ -59,13 +59,11 @@ namespace SportsPro {
             Customer selected = GetSelectedCustomer();
             bool alreadyInList = (sessionList[selected.Name] != null);
             if (alreadyInList) {
-                // display message
+                lblMessage.Text = $"{selected.Name} is already in the contact list.";
                 return;
             }
-
             sessionList.AddItem(selected);
             Response.Redirect("~/ContactDisplay.aspx");
-
         }
     }
 }
