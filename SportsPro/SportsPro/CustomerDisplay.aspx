@@ -56,9 +56,18 @@
                 </div>
             </div>
             <div class="col-sm-offset-1">
-                <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List" CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
+                <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List"
+                    CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
                 <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"
                     CssClass="btn btn-primary" PostBackUrl="~/ContactDisplay.aspx" />
+            </div>
+            <div class="col-sm-offset-1">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"
+                            CssClass="text-danger"></asp:Label>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
