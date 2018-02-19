@@ -29,11 +29,38 @@ namespace SportsPro {
         }
 
         protected void btnRemoveContact_Click(object sender, EventArgs e) {
-            // stub event handler
+            RemoveChosenContact();
+        }
+
+        private void RemoveChosenContact() {
+            bool contactsExist = (contacts.Count > 0);
+            if (!contactsExist) {
+                return;
+            }
+            int selectedIdx = lstContacts.SelectedIndex;
+            bool itemIsSelected = (selectedIdx > -1);
+            if (itemIsSelected) {
+                contacts.RemoveAt(selectedIdx);
+                DisplayContacts(); // refresh display
+            } else {
+                NotifyUser("Please select a contact to remove.");
+            }
+        }
+
+        private void NotifyUser(string msg) {
+            lblMessage.Text = msg;
         }
 
         protected void btnEmptyContacts_Click(object sender, EventArgs e) {
-            // stub event handler
+            RemoveAllContacts();
+        }
+
+        private void RemoveAllContacts() {
+            bool contactsExist = (contacts.Count > 0);
+            if (contactsExist) {
+                contacts.Clear();
+                lstContacts.Items.Clear(); // refresh display
+            }            
         }
     }
 }

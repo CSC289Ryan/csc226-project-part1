@@ -19,39 +19,28 @@
         </div>
         <form id="form1" runat="server" class="form-horizontal">
             <div class="row col-sm-offset-1">
-                <div class="col-sm-12">
-                    Contact List:
-                </div>
-                <div class="col-sm-6"> <%-- Contact display column --%>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <asp:ListBox ID="lstContacts" runat="server" CssClass="form-control"></asp:ListBox>
-                        </div>
+                <div class="form-group">
+                    <div class="col-sm-12">Contact List:</div>
+                    <div class="col-sm-6">
+                        <asp:ListBox ID="lstContacts" runat="server" CssClass="form-control"></asp:ListBox>
                     </div>
-                </div>
-                <div class="col-sm-2"> <%-- listbox manipulation buttons --%>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" 
-                                CssClass="btn btn-primary btn-block" OnClick="btnRemoveContact_Click" />
-                        </div>
-                        <div class="col-sm-12">
-                            <asp:Button ID="btnEmptyContacts" runat="server" Text="Empty List"
-                                CssClass="btn btn-primary btn-block" OnClick="btnEmptyContacts_Click" />
-                        </div>
+                    <div class="col-sm-2">
+                        <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" 
+                            CssClass="btn btn-primary btn-block" OnClick="btnRemoveContact_Click" />
+                        <asp:Button ID="btnEmptyContacts" runat="server" Text="Empty List"
+                            CssClass="btn btn-primary btn-block" OnClick="btnEmptyContacts_Click" />
                     </div>
                 </div>
             </div>
             <div class="row col-sm-offset-1">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <asp:Button ID="btnAddCustomers" runat="server" Text="Select Additional Customers" 
+                            CssClass="btn btn-primary" PostBackUrl="~/CustomerDisplay.aspx"/>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <asp:Button ID="btnAddCustomers" runat="server" Text="Select Additional Customers" 
-                                CssClass="btn btn-primary" PostBackUrl="~/CustomerDisplay.aspx"/>
-                        </div>
+                    <div class="col-sm-12">
+                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"
+                            CssClass="text-danger"></asp:Label>
                     </div>
                 </div>
             </div>
