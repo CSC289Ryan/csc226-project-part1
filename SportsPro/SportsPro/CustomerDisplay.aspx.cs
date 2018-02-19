@@ -53,5 +53,13 @@ namespace SportsPro {
             lblPhone.Text = c.PhoneNumber;
             lblEmail.Text = c.Email;
         }
+
+        protected void btnAddContact_Click(object sender, EventArgs e) {
+            // stub event handler
+        }
+
+        protected void btnDisplayContacts_Click(object sender, EventArgs e) {
+            // stub event handler
+        }
     }
 }
