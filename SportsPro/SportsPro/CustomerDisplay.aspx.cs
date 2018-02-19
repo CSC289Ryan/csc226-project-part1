@@ -22,14 +22,14 @@ namespace SportsPro {
         }
 
         private Customer GetSelectedCustomer() {
-            DataRowView row = GetSelectedTableRow();
+            DataRowView row = RowFromCustomerTableById(ddlCustomers.SelectedValue);
             return CustomerFromTableRow(row);
         }
 
-        private DataRowView GetSelectedTableRow() {
+        private DataRowView RowFromCustomerTableById(string targetID) {
             DataView customersTable = (DataView)
                 SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            customersTable.RowFilter = $"CustomerID = '{ddlCustomers.SelectedValue}'";
+            customersTable.RowFilter = $"CustomerID = '{targetID}'";
             DataRowView firstRow = customersTable[0];
             return firstRow;
         }
