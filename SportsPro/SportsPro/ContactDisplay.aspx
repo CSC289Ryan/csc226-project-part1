@@ -17,8 +17,17 @@
             <h4>Sports management software for the sports enthusiast</h4>
         </div>
         <form id="form1" runat="server" class="form-horizontal">
-            <div>
-    
+            <div class="row col-sm-offset-1">
+                <div class="col-sm-12">
+                    Contact List:
+                </div>
+                <div class="col-sm-6"> <%-- Contact display column --%>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <asp:ListBox ID="lstContacts" runat="server" CssClass="form-control"></asp:ListBox>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
