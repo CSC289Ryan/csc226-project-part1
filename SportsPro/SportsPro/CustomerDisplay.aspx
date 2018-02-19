@@ -11,27 +11,49 @@
     <title></title>
 </head>
 <body>
-    <h1>SportsPro</h1>
-    <h4>Sports management software for the sports enthusiast</h4>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Select a customer:"></asp:Label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
-            </asp:DropDownList><br />
+    <div class="container">
+        <div class="jumbotron">
+            <h1>SportsPro</h1>
+            <h4>Sports management software for the sports enthusiast</h4>
         </div>
-        <div>
-            <asp:Label ID="Label2" runat="server" Text="Address:"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </div>
-        <div>
-            <asp:Label ID="Label4" runat="server" Text="Phone:"></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-        </div>
-        <div>
-            <asp:Label ID="Label5" runat="server" Text="Email:"></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-        </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' SelectCommand="SELECT * FROM [Customers] ORDER BY [Name]"></asp:SqlDataSource>
-    </form>
+        <form id="form1" runat="server" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="Label1" runat="server" Text="Select a customer:" CssClass="control-label"></asp:Label>
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                        ConnectionString='<%$ ConnectionStrings:ConnectionString %>'
+                        SelectCommand="SELECT * FROM [Customers] ORDER BY [Name]"></asp:SqlDataSource>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="Label2" runat="server" Text="Address:"></asp:Label>
+                </div>
+                <div class="col-sm-4">
+                    <asp:Label ID="lblAddress" runat="server" Text="ADDRESS"></asp:Label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="Label3" runat="server" Text="Phone:"></asp:Label>
+                </div>
+                <div class="col-sm-4">
+                    <asp:Label ID="lblPhone" runat="server" Text="PHONE"></asp:Label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-2">
+                    <asp:Label ID="Label4" runat="server" Text="Email:"></asp:Label>
+                </div>
+                <div class="col-sm-4">
+                    <asp:Label ID="lblEmail" runat="server" Text="EMAIL"></asp:Label>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
