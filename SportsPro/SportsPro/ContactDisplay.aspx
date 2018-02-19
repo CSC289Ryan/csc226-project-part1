@@ -28,6 +28,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-6"> <%-- listbox manipulation buttons --%>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" 
+                                CssClass="btn btn-primary" OnClick="btnRemoveContact_Click" />
+                        </div>
+                        <div class="col-sm-12">
+                            <asp:Button ID="btnEmptyContacts" runat="server" Text="Empty List"
+                                CssClass="btn btn-primary" OnClick="btnEmptyContacts_Click" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

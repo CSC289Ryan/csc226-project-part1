@@ -10,5 +10,13 @@ namespace SportsPro {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
+
+        protected void btnRemoveContact_Click(object sender, EventArgs e) {
+            // stub event handler
+        }
+
+        protected void btnEmptyContacts_Click(object sender, EventArgs e) {
+            // stub event handler
+        }
     }
 }
