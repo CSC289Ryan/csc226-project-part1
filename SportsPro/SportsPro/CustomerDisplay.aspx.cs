@@ -10,19 +10,31 @@ using SportsPro.Models;
 namespace SportsPro {
     public partial class CustomerDisplay : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                ddlCustomers.DataBind();
-            }
+            DataBindOnFirstLoad();
             Customer c = GetSelectedCustomer();
             DisplayCustomerInfo(c);
         }
 
+        private void DataBindOnFirstLoad() {
+            if (!IsPostBack) {
+                ddlCustomers.DataBind();
+            }
+        }
+
         private Customer GetSelectedCustomer() {
+            DataRowView row = GetSelectedTableRow();
+            return CustomerFromTableRow(row);
+        }
+
+        private DataRowView GetSelectedTableRow() {
             DataView customersTable = (DataView)
                 SqlDataSource1.Select(DataSourceSelectArguments.Empty);
             customersTable.RowFilter = $"CustomerID = '{ddlCustomers.SelectedValue}'";
-            DataRowView row = customersTable[0];
+            DataRowView firstRow = customersTable[0];
+            return firstRow;
+        }
 
+        private Customer CustomerFromTableRow(DataRowView row) {
             Customer c = new Customer();
             c.ID = (int)row["CustomerID"];
             c.Name = row["Name"].ToString();
