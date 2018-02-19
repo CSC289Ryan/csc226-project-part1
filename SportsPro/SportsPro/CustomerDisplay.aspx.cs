@@ -55,7 +55,17 @@ namespace SportsPro {
         }
 
         protected void btnAddContact_Click(object sender, EventArgs e) {
-            // stub event handler
+            CustomerList sessionList = CustomerList.GetCustomers();
+            Customer selected = GetSelectedCustomer();
+            bool alreadyInList = (sessionList[selected.Name] != null);
+            if (alreadyInList) {
+                // display message
+                return;
+            }
+
+            sessionList.AddItem(selected);
+            Response.Redirect("~/ContactDisplay.aspx");
+
         }
     }
 }
