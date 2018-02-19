@@ -57,9 +57,5 @@ namespace SportsPro {
         protected void btnAddContact_Click(object sender, EventArgs e) {
             // stub event handler
         }
-
-        protected void btnDisplayContacts_Click(object sender, EventArgs e) {
-            // stub event handler
-        }
     }
 }

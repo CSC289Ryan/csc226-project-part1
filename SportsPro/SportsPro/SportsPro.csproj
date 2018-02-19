@@ -99,10 +99,12 @@
     <Content Include="App_Data\TechSupport_log.ldf">
       <DependentUpon>TechSupport.mdf</DependentUpon>
     </Content>
+    <Content Include="ContactDisplay.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\site.css" />
     <Content Include="CustomerDisplay.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
@@ -135,6 +137,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactDisplay.aspx.cs">
+      <DependentUpon>ContactDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactDisplay.aspx.designer.cs">
+      <DependentUpon>ContactDisplay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerDisplay.aspx.cs">
       <DependentUpon>CustomerDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

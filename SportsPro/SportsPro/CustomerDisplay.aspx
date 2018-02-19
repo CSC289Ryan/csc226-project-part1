@@ -8,6 +8,7 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/site.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
@@ -56,7 +57,8 @@
             </div>
             <div class="col-sm-offset-1">
                 <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List" CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
-                <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"  CssClass="btn btn-primary" OnClick="btnDisplayContacts_Click" />
+                <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"
+                    CssClass="btn btn-primary" PostBackUrl="~/ContactDisplay.aspx" />
             </div>
         </form>
     </div>
