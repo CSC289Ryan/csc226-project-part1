@@ -41,6 +41,19 @@
                     </div>
                 </div>
             </div>
+            <div class="row col-sm-offset-1">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <asp:Button ID="btnAddCustomers" runat="server" Text="Select Additional Customers" 
+                                CssClass="btn btn-primary" PostBackUrl="~/CustomerDisplay.aspx"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </body>
