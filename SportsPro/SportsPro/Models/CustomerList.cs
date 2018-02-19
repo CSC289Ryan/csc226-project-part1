@@ -30,5 +30,33 @@ namespace SportsPro.Models {
                 return null;
             }
         }
+
+        public int Count {
+            get {
+                return customers.Count;
+            }
+        }
+
+        public static CustomerList GetCustomers() {
+            CustomerList sessionList = (CustomerList)
+                HttpContext.Current.Session["Customers"];
+            bool customersExist = (sessionList != null);
+            if (!customersExist) {
+                HttpContext.Current.Session.Add("Customers", new CustomerList());
+            }
+            return (CustomerList)HttpContext.Current.Session["Customers"];
+        }
+
+        public void AddItem(Customer customer) {
+            customers.Add(customer);
+        }
+
+        public void RemoveAt(int index) {
+            customers.RemoveAt(index);
+        }
+
+        public void Clear() {
+            customers.Clear();
+        }
     }
 }
