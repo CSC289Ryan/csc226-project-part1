@@ -54,6 +54,10 @@
                     <asp:Label ID="lblEmail" runat="server" Text="EMAIL"></asp:Label>
                 </div>
             </div>
+            <div class="col-sm-offset-1">
+                <asp:Button ID="btnAddContact" runat="server" Text="Add to Contact List" CssClass="btn btn-primary" OnClick="btnAddContact_Click" />
+                <asp:Button ID="btnDisplayContacts" runat="server" Text="Display Contact List"  CssClass="btn btn-primary" OnClick="btnDisplayContacts_Click" />
+            </div>
         </form>
     </div>
 </body>
