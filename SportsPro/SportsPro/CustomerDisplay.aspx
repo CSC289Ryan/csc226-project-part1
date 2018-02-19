@@ -64,7 +64,8 @@
             <div class="col-sm-offset-1">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+                        <asp:Label ID="lblMessage" runat="server" EnableViewState="false"
+                            CssClass="text-danger"></asp:Label>
                     </div>
                 </div>
             </div>

@@ -61,7 +61,7 @@ namespace SportsPro {
 
         // This function does too much. Needs refactoring.
         // It notifies user if customer is already in list, it adds customer if not, and
-        // then redirects to another url after adding
+        // then redirects to contact page after adding
         private void AddCustomerToContactList(Customer customer) {
             CustomerList contactList = CustomerList.GetCustomers();
             bool alreadyInList = (contactList[customer.Name] != null);
@@ -69,7 +69,7 @@ namespace SportsPro {
                 NotifyUser($"{customer.Name} is already in the contact list.");
             } else {
                 contactList.AddItem(customer);
-                NavigateToUrl("~/ContactDisplay.aspx");
+                NavigateToContactPage();
             }
         }
 
@@ -77,8 +77,8 @@ namespace SportsPro {
             lblMessage.Text = msg;
         }
 
-        private void NavigateToUrl(string url) {
-            Response.Redirect(url);
+        private void NavigateToContactPage() {
+            Response.Redirect("~/ContactDisplay.aspx");
         }
     }
 }
