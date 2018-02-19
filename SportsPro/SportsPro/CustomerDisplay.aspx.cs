@@ -55,15 +55,30 @@ namespace SportsPro {
         }
 
         protected void btnAddContact_Click(object sender, EventArgs e) {
-            CustomerList sessionList = CustomerList.GetCustomers();
             Customer selected = GetSelectedCustomer();
-            bool alreadyInList = (sessionList[selected.Name] != null);
+            AddCustomerToContactList(selected);
+        }
+
+        // This function does too much. Needs refactoring.
+        // It notifies user if customer is already in list, it adds customer if not, and
+        // then redirects to another url after adding
+        private void AddCustomerToContactList(Customer customer) {
+            CustomerList contactList = CustomerList.GetCustomers();
+            bool alreadyInList = (contactList[customer.Name] != null);
             if (alreadyInList) {
-                lblMessage.Text = $"{selected.Name} is already in the contact list.";
-                return;
+                NotifyUser($"{customer.Name} is already in the contact list.");
+            } else {
+                contactList.AddItem(customer);
+                NavigateToUrl("~/ContactDisplay.aspx");
             }
-            sessionList.AddItem(selected);
-            Response.Redirect("~/ContactDisplay.aspx");
+        }
+
+        private void NotifyUser(string msg) {
+            lblMessage.Text = msg;
+        }
+
+        private void NavigateToUrl(string url) {
+            Response.Redirect(url);
         }
     }
 }
