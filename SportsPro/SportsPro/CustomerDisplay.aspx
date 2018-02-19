@@ -22,7 +22,8 @@
                     <asp:Label ID="Label1" runat="server" Text="Select a customer:" CssClass="control-label"></asp:Label>
                 </div>
                 <div class="col-sm-4">
-                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="ddlCustomers" runat="server" CssClass="form-control" AutoPostBack="True"
+                        DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="CustomerID">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                         ConnectionString='<%$ ConnectionStrings:ConnectionString %>'
