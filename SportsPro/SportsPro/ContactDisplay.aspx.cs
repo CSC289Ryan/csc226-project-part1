@@ -33,8 +33,7 @@ namespace SportsPro {
         }
 
         private void RemoveChosenContact() {
-            bool contactsExist = (contacts.Count > 0);
-            if (!contactsExist) {
+            if (!ContactsExist()) {
                 return;
             }
             int selectedIdx = lstContacts.SelectedIndex;
@@ -47,6 +46,10 @@ namespace SportsPro {
             }
         }
 
+        private bool ContactsExist() {
+            return contacts.Count > 0;
+        }
+
         private void NotifyUser(string msg) {
             lblMessage.Text = msg;
         }
@@ -56,8 +59,7 @@ namespace SportsPro {
         }
 
         private void RemoveAllContacts() {
-            bool contactsExist = (contacts.Count > 0);
-            if (contactsExist) {
+            if (ContactsExist()) {
                 contacts.Clear();
                 lstContacts.Items.Clear(); // refresh display
             }            
